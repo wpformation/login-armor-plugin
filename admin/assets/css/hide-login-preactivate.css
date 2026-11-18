@@ -1,0 +1,157 @@
+/*!
+ * LoginArmor: Hide Login pre-activation modal styling.
+ * Mirrors the visual language of admin/assets/css/confirm-modal.css
+ * (same dialog chrome, same button hierarchy) plus form fields.
+ */
+
+.la-hl-preactivate {
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    max-width: 520px;
+    width: calc(100vw - 32px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+    background: #fff;
+    color: #1e1e1e;
+}
+.la-hl-preactivate::backdrop {
+    background: rgba(10, 20, 30, 0.48);
+}
+
+.la-hl-preactivate__inner {
+    padding: 24px 24px 12px;
+}
+
+.la-hl-preactivate__title {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.la-hl-preactivate__lede {
+    margin: 0 0 20px;
+    font-size: 13px;
+    color: #50575e;
+    line-height: 1.5;
+}
+
+.la-hl-preactivate__field {
+    display: block;
+    margin: 0 0 16px;
+}
+.la-hl-preactivate__field-label {
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+.la-hl-preactivate__input-row {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+}
+.la-hl-preactivate__input {
+    /* min-width: 0. A text field has a width of its own, some twenty
+       characters, below which a flex row will not take it: on a 360px
+       telephone the field and the button were 51px wider than the dialog,
+       and the dialog scrolled sideways under its own title (2.7.7). */
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 8px 10px;
+    font-family: var(--la-font-mono, ui-monospace, monospace);
+    font-size: 14px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    background: #fff;
+}
+.la-hl-preactivate__input:focus {
+    outline: 2px solid #2271b1;
+    outline-offset: -1px;
+    border-color: transparent;
+}
+.la-hl-preactivate__regenerate {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    background: #f6f7f7;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.la-hl-preactivate__regenerate:hover {
+    background: #f0f0f1;
+}
+.la-hl-preactivate__hint {
+    display: block;
+    font-size: 11px;
+    color: #646970;
+    margin-top: 6px;
+}
+.la-hl-preactivate__error {
+    display: block;
+    font-size: 12px;
+    color: #b32d2e;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+.la-hl-preactivate__checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    background: #f6f7f7;
+    border: 1px solid #dcdcde;
+    border-radius: 6px;
+    margin: 0 0 4px;
+    font-size: 13px;
+    cursor: pointer;
+    line-height: 1.4;
+}
+.la-hl-preactivate__checkbox input {
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.la-hl-preactivate__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 16px 24px;
+    background: #f6f7f7;
+    border-top: 1px solid #dcdcde;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Scoped button variants: the dialog is appended to <body> (not inside
+ * #la-root) so it cannot inherit the plugin's global .la-btn rules, and
+ * applying them here would produce two identical primary-red buttons.
+ * Cancel = secondary (neutral outline), Activate = primary (WP blue). */
+.la-hl-preactivate__btn {
+    appearance: none;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.la-hl-preactivate__btn--secondary {
+    background: #f6f7f7;
+    color: #1e1e1e;
+    border-color: #c3c4c7;
+}
+.la-hl-preactivate__btn--secondary:hover {
+    background: #f0f0f1;
+}
+.la-hl-preactivate__btn--primary {
+    background: #2271b1;
+    color: #fff;
+    border-color: #2271b1;
+}
+.la-hl-preactivate__btn--primary:hover {
+    background: #135e96;
+    border-color: #135e96;
+}

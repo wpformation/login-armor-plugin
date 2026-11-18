@@ -1,0 +1,138 @@
+/*!
+ * LoginArmor confirmation modal: singleton <dialog>
+ * Variants: danger (--la-attack), primary (--la-accent), neutral (--la-border-strong)
+ */
+
+dialog.la-confirm {
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    max-width: 480px;
+    width: calc(100% - 32px);
+    background: #FFFFFF;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.12), 0 10px 10px -5px rgba(0,0,0,0.06);
+    color: var(--la-text, #1D2327);
+    font-family: var(--la-font-sans, -apple-system, sans-serif);
+}
+
+dialog.la-confirm::backdrop {
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+.la-confirm__inner {
+    padding: 24px 24px 20px;
+}
+
+.la-confirm__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0 0 10px;
+    color: var(--la-text, #1D2327);
+}
+
+.la-confirm__body {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--la-text-muted, #50575E);
+    margin: 0 0 16px;
+    white-space: pre-line; /* respect \n from caller */
+}
+
+.la-confirm__checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    background: var(--la-bg-2, #F6F7F7);
+    border: 1px solid var(--la-border, #DCDCDE);
+    border-radius: 6px;
+    margin: 0 0 16px;
+    font-size: 13px;
+    cursor: pointer;
+}
+/* Respect the `hidden` attribute, `display:flex` above would override it otherwise. */
+.la-confirm__checkbox[hidden] { display: none !important; }
+
+.la-confirm__checkbox input {
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* 2.8.0: the account password, asked before a change that weakens it. */
+.la-confirm__password {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0 0 16px;
+}
+.la-confirm__password[hidden] { display: none !important; }
+.la-confirm__password-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1d2327;
+}
+.la-confirm__password input {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 36px;
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #8c8f94;
+    border-radius: 6px;
+}
+.la-confirm__password input:focus-visible {
+    outline: 2px solid #2271b1;
+    outline-offset: 1px;
+}
+
+.la-confirm__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 0 24px 20px;
+}
+
+.la-confirm__btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid var(--la-border, #DCDCDE);
+    background: #FFFFFF;
+    cursor: pointer;
+    transition: background 120ms, border-color 120ms;
+}
+
+.la-confirm__btn:hover { background: var(--la-bg-2, #F6F7F7); }
+
+.la-confirm__btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 2.8.0: white read 3.9:1 on the accent, 5.1:1 on its hover shade. */
+.la-confirm__btn--primary {
+    color: #FFFFFF;
+    background: var(--la-accent-hover, #C73D24);
+    border-color: var(--la-accent-hover, #C73D24);
+}
+.la-confirm__btn--primary:hover { background: #A8331F; border-color: #A8331F; }
+
+.la-confirm__btn--danger {
+    color: #FFFFFF;
+    background: var(--la-attack, #B32D2E);
+    border-color: var(--la-attack, #B32D2E);
+}
+.la-confirm__btn--danger:hover { background: #8F2425; border-color: #8F2425; }
+
+.la-confirm__variant--danger .la-confirm__title { color: var(--la-attack, #B32D2E); }
+
+@media (prefers-reduced-motion: no-preference) {
+    dialog.la-confirm[open] { animation: la-confirm-in 160ms ease-out; }
+    @keyframes la-confirm-in {
+        from { opacity: 0; transform: translateY(-8px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+}

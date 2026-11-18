@@ -1,0 +1,61 @@
+/* Login Armor: design tokens (Lot 18 redesign) */
+
+body.login-armor-page {
+  /* Brand */
+  --la-navy: #1a2030;
+  --la-navy-2: #232a3d;
+  --la-gold: #f4d03f;
+
+  /* Semantic */
+  --la-emerald: #10b981;
+  --la-emerald-dark: #059669;
+  --la-emerald-light: #d1fae5;
+  --la-red: #dc2626;
+  --la-red-light: #fee2e2;
+  --la-amber: #f59e0b;
+  --la-amber-light: #fef3c7;
+
+  /* Slate neutrals */
+  --la-slate-900: #0f172a;
+  --la-slate-800: #1e293b;
+  --la-slate-700: #334155;
+  --la-slate-600: #475569;
+  --la-slate-500: #64748b;
+  --la-slate-400: #94a3b8;
+  --la-slate-300: #cbd5e1;
+  --la-slate-200: #e2e8f0;
+  --la-slate-100: #f1f5f9;
+  --la-slate-50:  #f8fafc;
+  --la-paper:     #f4f5f7;
+
+  /* Spacing (4px base) */
+  --la-sp-1: 4px;
+  --la-sp-2: 8px;
+  --la-sp-3: 12px;
+  --la-sp-4: 16px;
+  --la-sp-5: 20px;
+  --la-sp-6: 24px;
+  --la-sp-7: 28px;
+  --la-sp-8: 32px;
+  --la-sp-10: 40px;
+  --la-sp-11: 44px;
+  --la-sp-12: 48px;
+
+  /* Radius */
+  --la-r-pill: 999px;
+  --la-r-pill-sm: 5px;
+  --la-r-btn: 7px;
+  --la-r-btn-lg: 8px;
+  --la-r-card-sm: 10px;
+  --la-r-card-md: 12px;
+  --la-r-card: 14px;
+  --la-r-hero: 20px;
+
+  /* Fonts */
+  --la-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --la-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Shadows */
+  --la-shadow-card-hover: 0 4px 12px -4px rgba(15,23,42,0.08);
+  --la-shadow-hero: 0 1px 2px rgba(15,23,42,0.04), 0 10px 30px -10px rgba(15,23,42,0.2);
+}
